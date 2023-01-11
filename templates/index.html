@@ -1,0 +1,52 @@
+{% import "bootstrap/wtf.html" as wtf %}
+{% include "header.html" %}
+{% block content %}
+
+<!-- Page Header -->
+<header class="masthead"
+        style="background-image: url('https://images.unsplash.com/photo-1470092306007-055b6797ca72?ixlib=rb-1.2.1&auto=format&fit=crop&w=668&q=80')">
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-md-10">
+                <div class="site-heading">
+                    <h1>News Blog</h1>
+                    <span class="subheading">A collection of News.</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            {{ wtf.quick_form(form) }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+            {% if all_posts %}
+            <div class="post-preview">
+                {% for post in all_posts %}
+                <a href="{{ post.url }}" target="_blank">
+                    <h2 class="post-title">{{post.title | safe}}</h2>
+                    <h6 class="post-subtitle">{{post.description | safe}}</h6>
+                    <p class="post-meta">Posted by {{post.author | safe}} on {{post.publishedAt | safe}}</p>
+                </a>
+                <div>
+                    <p> <img alt="{{ post.title }}" style="float:left;" height="150px" src="{{post.urlToImage }}" width="150px"/> {{ post.content | safe}} <a class="btn btn-primary float-right" href="{{ post.url }}">Show More</a></p>
+                </div>
+                <hr>
+                {% endfor %}
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
+{% include "footer.html" %}

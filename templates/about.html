@@ -1,0 +1,37 @@
+{% include "header.html" %}
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url({{ url_for('static', filename='img/about-bg.jpg')}})">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="page-heading">
+            <h1>About Me</h1>
+            <span class="subheading">This is what I do.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <p>I am a self-taught programmer with a passion for Python. I have been learning and working with Python
+                    for the last two years, and I am constantly impressed by its simplicity and power. I am eager to
+                    continue my journey as a Python developer and to contribute to the Python community.<br><br>
+                    I am currently looking for new opportunities to apply my skills and expertise as a Python developer.<br><br>
+                    In my current role, I have used Python to build a number of web applications, automation scripts and
+                    data analysis pipelines. I am always looking for new ways to learn and grow as a developer.<br><br>
+                    I am excited to connect with other Python enthusiasts and explore new opportunities in the world of
+                    Python development. Whether you are a seasoned developer or just starting out, I would love to hear
+                    from you and discuss how we can work together to advance the field of Python programming.</p>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  {% include "footer.html" %}
